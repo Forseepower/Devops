@@ -24,7 +24,7 @@ jobs:
         id: short_sha
         run: |
           echo "short_sha=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
-        run: |
+      - run: |
             curl --request POST \
             --url https://api.github.com/repos/${{ github.repository }}/issues \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
