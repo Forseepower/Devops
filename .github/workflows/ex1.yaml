@@ -10,7 +10,8 @@ jobs:
           uses: actions/checkout@v4
         - name: Install Node.js
           uses: actions/setup-node@v4
-        - name: Run the command
+          with:
+            node-version: lts/*
           run: npm install
         - name: Test npm
           run: npm test
