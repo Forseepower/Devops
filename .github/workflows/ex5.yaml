@@ -5,6 +5,6 @@ on:
 jobs:
   my-job:
 
-    uses: ./.github/workflows/Reusable-workflow-user.yml@feature/test
+    uses: Forseepower/Devops/.github/workflows/Reusable-workflow-user.yml@feature/test
     with:
       node-version: '18'
