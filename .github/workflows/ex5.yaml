@@ -1,0 +1,10 @@
+name: Reusable-workflow-user
+on:
+  workflow_dispatch:
+
+jobs:
+  my-job:
+
+    uses: Forseepower/Devops/.github/workflows/Reusable-workflow-user.yml@feature/test
+    with:
+      node-version: '18'
