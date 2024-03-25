@@ -10,21 +10,21 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name : setup node          
+      - name: setup node          
         uses: actions/setup-node@v3
         with:
           node-version: ${{env.NODE_VERSION}}
-        - name: run test
-          shell: bash
-          run: |
-            npm install
-            npm test
-            node -v
-        - name: create Github issue
-          id: short_sha
-          run: |
-            echo "short_sha=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
-          run: |
+      - name: run test
+        shell: bash
+        run: |
+          npm install
+          npm test
+          node -v
+      - name: create Github issue
+        id: short_sha
+        run: |
+          echo "short_sha=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+        run: |
             curl --request POST \
             --url https://api.github.com/repos/${{ github.repository }}/issues \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
