@@ -1,0 +1,10 @@
+name: Reusable-workflow-user
+on:
+  workflow_dispatch:
+
+jobs:
+  my-job:
+
+    uses: ./.github/workflows/Reusable-workflow-user.yml@feature/test
+    with:
+      node-version: '18'
