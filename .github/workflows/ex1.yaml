@@ -12,13 +12,5 @@ jobs:
           uses: actions/setup-node@v4
         - name: Run the command
           run: npm install
-  job2:
-    runs-on: ubuntu-latest
-    steps: 
-        - name: Check out repository
-          uses: actions/checkout@v4
-        - name: Install Node.js
-          uses: actions/setup-node@v4
-        - name: Run the command
+        - name: Test npm
           run: npm test
-    needs: job1
